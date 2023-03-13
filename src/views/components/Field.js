@@ -16,12 +16,8 @@ class Field extends Component {
     this._settings.label = this.getAttribute('label');
 
     this._basicElement.innerHTML = this.template();
-    this.shadowRoot.appendChild(this._basicElement);
 
-    this.createStore();
     this._store = store[`component-${this._settings.id}`]
-
-    this.addEvents();
   }
   addEvents() {
     this.shadowRoot.querySelector('input').addEventListener('change', (e) => {

@@ -21,6 +21,19 @@ export default class Component extends HTMLElement {
       this.shadowRoot.append(link);
     })
   }
+  connectedCallback() {
+    this.shadowRoot.appendChild(this._basicElement);
+    this.createStore();
+    this.addEvents();
+  }
+
+  disconnectedCallback() {
+    delete window.store[`component-${this._settings.id}`];
+  }
+
+  addEvents() {
+
+  }
 
   createStore() {
     store(this._settings, `component-${this._settings.id}`);

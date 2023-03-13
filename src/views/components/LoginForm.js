@@ -4,10 +4,6 @@ class LoginForm extends Component {
   constructor() {
     super({element: 'div', className: 'login'}, ['loginForm.css']);
     this._basicElement.innerHTML = this.template();
-    this.createStore();
-    this.shadowRoot.appendChild(this._basicElement);
-
-    this.addEvents();
   }
 
   addEvents() {

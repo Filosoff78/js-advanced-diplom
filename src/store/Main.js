@@ -1,6 +1,7 @@
-import {store} from './Store';
+import { store } from './Store';
+
 export function registerStore() {
   store({
-    key: 'qwewqew'
+    key: null,
   }, 'user');
 }

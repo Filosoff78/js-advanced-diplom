@@ -8,9 +8,7 @@ class Header extends Component {
     this._settings.instance = this;
 
     this._basicElement.innerHTML = this.template();
-    this.shadowRoot.appendChild(this._basicElement);
 
-    this.createStore();
     this._store = window.store[`component-${this._settings.id}`]
 
     document.addEventListener(`user`,  () => {
