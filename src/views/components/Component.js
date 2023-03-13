@@ -37,10 +37,6 @@ export default class Component extends HTMLElement {
 
   createStore() {
     store(this._settings, `component-${this._settings.id}`);
-    // document.addEventListener(`component-${this._settings.id}`,  (event) => {
-    //   console.log(event);
-    //   this.render();
-    // });
   }
 
   render() {

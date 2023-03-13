@@ -17,6 +17,7 @@ export function randomString(i) {
 export function validateField(formId) {
   for (const key in window.store) {
     if (window.store[key].form === formId) {
+      console.log(window.store[key]);
       window.store[key].status = window.store[key].validator.test(window.store[key].value) ? 'success' : 'error';
       window.store[key].instance.render();
     }

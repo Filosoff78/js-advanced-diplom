@@ -16,12 +16,10 @@ class Field extends Component {
     this._settings.label = this.getAttribute('label');
 
     this._basicElement.innerHTML = this.template();
-
-    this._store = store[`component-${this._settings.id}`]
   }
   addEvents() {
     this.shadowRoot.querySelector('input').addEventListener('change', (e) => {
-      this._settings.value = this._store.value = e.target.value;
+      this._settings.value = store[`component-${this._settings.id}`].value = e.target.value;
     })
   }
   render() {
