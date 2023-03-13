@@ -1,0 +1,19 @@
+.list__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.list__container-title {
+  display: flex;
+  flex-direction: row;
+}
+.list__container__input {
+  flex: 1 1 auto;
+  margin-left: 10px;
+}
+.list__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

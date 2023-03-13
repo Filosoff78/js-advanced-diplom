@@ -1,0 +1,35 @@
+.field {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.field__label {
+  padding-right: 18px;
+  font-family: 'Ubuntu', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.field__input {
+  position: relative;
+  padding: 10px;
+  margin-right: 19px;
+  width: 300px;
+  border: 1px solid #9CA3AF;
+  border-radius: 7px;
+  background-color: white;
+  outline: none;
+}
+
+.field__input.success {
+  border: 1px solid #40fa11;
+}
+
+.field__input.error {
+  border: 1px solid #fa7211;
+}
+
