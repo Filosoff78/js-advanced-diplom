@@ -4,7 +4,7 @@ export function registerWindowOptions() {
   };
   const link = document.createElement('link');
   link.setAttribute('rel', 'stylesheet');
-  link.setAttribute('href', require(`../assest/css/main.css`).default);
+  link.setAttribute('href', require('../assest/css/main.css').default);
   document.body.append(link);
 }
 
@@ -15,11 +15,13 @@ export function randomString(i) {
 }
 
 export function validateField(formId) {
+  let notFindError = true;
   for (const key in window.store) {
     if (window.store[key].form === formId) {
-      console.log(window.store[key]);
       window.store[key].status = window.store[key].validator.test(window.store[key].value) ? 'success' : 'error';
       window.store[key].instance.render();
+      if (notFindError) notFindError = window.store[key].status === 'success';
     }
   }
+  return notFindError;
 }

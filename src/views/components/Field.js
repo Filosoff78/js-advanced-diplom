@@ -30,7 +30,8 @@ class Field extends Component {
     return `
         <link rel="stylesheet" href="/css/field.css">
         <label for="login-name" class="field__label">${this._settings.label}</label>
-        <input class="field__input ${this._settings.status}" type="text" id="login-name" name="name" value="${this._settings.value}"/>
+        <input class="field__input ${this._settings.status}"
+               type="text" id="login-name" name="name" value="${this._settings.value}"/>
     `;
   }
 }

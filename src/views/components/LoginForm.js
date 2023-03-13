@@ -8,7 +8,11 @@ class LoginForm extends Component {
 
   addEvents() {
     const button = this.shadowRoot.querySelector('.js-login-button');
-    button.addEventListener('click', () => validateField(this._settings.id))
+    button.addEventListener('click', () => {
+      if(validateField(this._settings.id)) {
+        store.user.key = '123';
+      }
+    })
   }
 
   template = () => {
