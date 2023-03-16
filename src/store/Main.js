@@ -2,6 +2,6 @@ import { store } from './Store';
 
 export function registerStore() {
   store({
-    key: null,
+    key: '123123',
   }, 'user');
 }

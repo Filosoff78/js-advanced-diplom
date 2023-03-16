@@ -4,7 +4,7 @@ import "../../assest/css/field.css";
 
 class Field extends Component {
   constructor() {
-    super({element: 'div', className: 'field'});
+    super({element: 'div', className: 'field'}, ['field.css']);
 
     if (this.getAttribute('validator'))
       this._settings.validator = Validator[this.getAttribute('validator')];
@@ -14,8 +14,6 @@ class Field extends Component {
     this._settings.value = '';
     this._settings.instance = this;
     this._settings.label = this.getAttribute('label');
-
-    this._basicElement.innerHTML = this.template();
   }
   addEvents() {
     this.shadowRoot.querySelector('input').addEventListener('change', (e) => {
@@ -28,7 +26,6 @@ class Field extends Component {
   }
   template = () => {
     return `
-        <link rel="stylesheet" href="/css/field.css">
         <label for="login-name" class="field__label">${this._settings.label}</label>
         <input class="field__input ${this._settings.status}"
                type="text" id="login-name" name="name" value="${this._settings.value}"/>

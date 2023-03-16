@@ -1,21 +1,29 @@
 import Navigo from 'navigo';
 import Home from '../views/pages/Home';
+import Currency from '../views/pages/Currency';
 
-const router = new Navigo('/');
+window.router = new Navigo('/', { hash: true });
 
 const routing = [
   {
     url: '/',
-    page: new Home,
+    page: new Home(),
+  },
+  {
+    url: '/currency',
+    page: new Currency(),
   },
 ];
 
-export function registerRouting() {
-  routing.forEach((route) => {
-    router.on('/', () => {
-      route.page.render();
+function registerRouting() {
+  routing.forEach(({ url, page }) => {
+    window.router.on(url, () => {
+      page.render();
     });
+    console.log(url);
   });
 
-  router.resolve();
+  window.router.resolve();
 }
+
+export default registerRouting;

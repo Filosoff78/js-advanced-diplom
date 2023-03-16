@@ -13,27 +13,27 @@ export default class Component extends HTMLElement {
     this._basicElement.id = this._settings.id;
     this._settings.element = this._basicElement;
 
-    classList.push('main.css', 'constants.css');
     classList.forEach((className) => {
       const link = document.createElement('link');
       link.setAttribute('rel', 'stylesheet');
-      link.setAttribute('href', require(`../../assest/css/${className}`).default);
+      link.setAttribute('href', `/css/${className}`);
       this.shadowRoot.append(link);
     })
   }
   connectedCallback() {
+    this._basicElement.innerHTML = this._settings.template ?? this.template();
     this.shadowRoot.appendChild(this._basicElement);
     this.createStore();
     this.addEvents();
   }
 
   disconnectedCallback() {
+    this.unRender();
     delete window.store[`component-${this._settings.id}`];
   }
 
-  addEvents() {
-
-  }
+  addEvents() {}
+  unRender() {}
 
   createStore() {
     store(this._settings, `component-${this._settings.id}`);

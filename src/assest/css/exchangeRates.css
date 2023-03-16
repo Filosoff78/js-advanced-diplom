@@ -1,0 +1,57 @@
+.currency__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.currency__item:not(:last-child) {
+  margin-bottom: 25px;
+}
+.currency__item {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.currency__name {
+  padding-right: 10px;
+  font-family: "WorkSans", serif;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #E5E5E5;
+  z-index: 2;
+}
+.currency__value {
+  padding-left: 10px;
+  font-family: "WorkSans", serif;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #E5E5E5;
+  z-index: 2;
+  padding-right: 27px;
+  background-size: 20px 10px;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.currency__item.green .currency__value {
+  background-image: url(../img/arrow-green.svg);
+}
+.currency__item.red .currency__value {
+  background-image: url(../img/arrow-red.svg);
+}
+.currency__border {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 2px;
+  background-image: url('../img/dotted-border.svg');
+  background-repeat: repeat-x;
+  z-index: 1;
+}
+.currency__item.green .currency__border {
+  background-image: url('../img/dotted-border-green.svg');
+}
+.currency__item.red .currency__border {
+  background-image: url('../img/dotted-border-red.svg');
+}

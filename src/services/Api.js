@@ -1,15 +1,15 @@
-import {API_URL} from "./Constants";
+import { API_URL } from './Constants';
 
 export const Api = {
   post: ({
-           url,
-           body,
-           headers = new Headers({ "Content-Type": `application/json` }),
-  }) => {
-    return fetch(API_URL + url, {
-      method: 'POST',
-      body: JSON.stringify(body),
-      headers,
-    }).then(r => r.json());
-  }
-}
+    url,
+    body,
+    headers = new Headers({ 'Content-Type': 'application/json' }),
+  }) => fetch(API_URL + url, {
+    method: 'POST',
+    body: JSON.stringify(body),
+    headers,
+  }).then((r) => r.json()),
+
+  get: (url) => fetch(API_URL + url).then((r) => r.json()),
+};
