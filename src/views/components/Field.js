@@ -4,7 +4,9 @@ import "../../assest/css/field.css";
 
 class Field extends Component {
   constructor() {
-    super({element: 'div', className: 'field'}, ['field.css']);
+    super({element: 'div', className: 'field'}, {
+      classList: ['field.css']
+    });
 
     if (this.getAttribute('validator'))
       this._settings.validator = Validator[this.getAttribute('validator')];

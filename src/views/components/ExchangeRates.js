@@ -3,9 +3,11 @@ import {API_URL} from "../../services/Constants";
 import {Api} from "../../services/Api";
 import (/* webpackChunkName: "exchangeRates" */"../../assest/css/exchangeRates.css");
 
-class ExhangeRates extends Component {
+class ExchangeRates extends Component {
   constructor() {
-    super({element: 'div'}, ['exchangeRates.css']);
+    super({element: 'div'}, {
+      classList: ['exchangeRates.css']
+    });
 
     this._currenciesExchange = [];
     this._settings.socket = new WebSocket('ws://localhost:3000/currency-feed');
@@ -22,7 +24,6 @@ class ExhangeRates extends Component {
   }
 
   render() {
-    console.log(this._currenciesExchange);
     this._basicElement.innerHTML = this.template();
   }
 
@@ -45,4 +46,4 @@ class ExhangeRates extends Component {
 }
 
 // зарегистрируем наш компонент как html-тэг
-window.customElements.define('exchange-rates', ExhangeRates);
+window.customElements.define('exchange-rates', ExchangeRates);

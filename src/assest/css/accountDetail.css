@@ -1,0 +1,24 @@
+.accounts__detail-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description__right {
+  width: 190px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.accounts__top {
+  padding-bottom: 25px;
+}
+
+.accounts__detail-content  {
+  display: grid;
+  grid-template-areas:
+        "a b"
+        "c c";
+  gap: 50px;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+}

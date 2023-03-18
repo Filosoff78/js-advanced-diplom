@@ -1,0 +1,55 @@
+.account__item {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  padding: 20px;
+  margin: 0 10px;
+}
+
+.accounts__item-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding-top: 10px;
+}
+
+.accounts__id {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Roboto";
+  padding-bottom: 9px;
+}
+
+.accounts__money {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.accounts__last-transaction {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.accounts__date-transaction {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.button-filled {
+  align-self: start;
+  padding: 12px 20px;
+  border: 2px solid var(--button-main);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--white);
+  text-decoration: none;
+  background-color: var(--button-main);
+  cursor: pointer;
+  outline: none;
+  z-index: 1;
+  transition: background-color 0.3s;
+}

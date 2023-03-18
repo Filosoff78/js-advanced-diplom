@@ -2,10 +2,6 @@ export function registerWindowOptions() {
   window.mainOptions = {
     contentContainer: document.getElementById('app'),
   };
-  const link = document.createElement('link');
-  link.setAttribute('rel', 'stylesheet');
-  link.setAttribute('href', require('../assest/css/main.css').default);
-  document.body.append(link);
 }
 
 export function randomString(i) {

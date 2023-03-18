@@ -3,7 +3,7 @@ import {store} from "../../store/Store";
 
 export default class Component extends HTMLElement {
   _settings = {};
-  constructor({element, className}, classList = []) {
+  constructor({element, className}, settings = {}) {
     super();
     this._settings.id = randomString(12);
     this.attachShadow({ mode: "open" });
@@ -13,7 +13,7 @@ export default class Component extends HTMLElement {
     this._basicElement.id = this._settings.id;
     this._settings.element = this._basicElement;
 
-    classList.forEach((className) => {
+    settings.classList?.forEach((className) => {
       const link = document.createElement('link');
       link.setAttribute('rel', 'stylesheet');
       link.setAttribute('href', `/css/${className}`);
@@ -41,5 +41,6 @@ export default class Component extends HTMLElement {
 
   render() {
     this._basicElement.innerHTML = this.template();
+    this.addEvents();
   }
 }

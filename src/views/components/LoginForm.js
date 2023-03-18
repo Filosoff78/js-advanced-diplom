@@ -2,7 +2,9 @@ import Component from "./Component";
 import {validateField} from "../../services/Helpers";
 class LoginForm extends Component {
   constructor() {
-    super({element: 'div', className: 'login'}, ['loginForm.css']);
+    super({element: 'div', className: 'login'}, {
+      classList: ['loginForm.css']
+    });
     this._basicElement.innerHTML = this.template();
   }
 
